@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Meta start -->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Orb Galaxy Random Chooser</title>
+		<!-- Meta end -->
+
+		<!-- Styles start -->
+		<link rel="stylesheet" href="assets/css/orb-galaxy/style.css" />
+		<!-- Styles end -->
+	</head>
+	<body class="theme--galaxy">
+		<!-- App wrapper start -->
+		<div class="app">
+			<!-- Top bar start -->
+			<header class="app__header">
+				<!-- Nav start -->
+				<nav class="app__nav">
+					<div class="app__brand">Orb Galaxy</div>
+					<div class="app__nav-links">
+						<a href="index.html" class="nav-link nav-link--active">Galaxy</a>
+						<a href="history.html" class="nav-link">History</a>
+					</div>
+				</nav>
+				<!-- Nav end -->
+
+				<!-- Title area start -->
+				<div class="app__hero">
+					<div>
+						<h1 class="app__title">Orb Galaxy Random Chooser</h1>
+						<p class="app__subtitle">
+							Type your options, launch the battle of planets, and let the galaxy
+							decide for you.
+						</p>
+					</div>
+
+					<!-- Controls: theme + sound start -->
+					<div class="app__toggles">
+						<!-- Theme select start -->
+						<div class="toggle-group">
+							<label for="themeSelect" class="toggle-group__label">Theme</label>
+							<select id="themeSelect" class="toggle-group__select">
+								<option value="galaxy">Galaxy</option>
+								<option value="solar">Solar System</option>
+								<option value="neon">Neon Grid</option>
+							</select>
+						</div>
+						<!-- Theme select end -->
+
+						<!-- Sound toggle start -->
+						<button
+							id="soundToggleBtn"
+							class="btn btn--ghost btn--small"
+							type="button"
+						>
+							Sound: Off
+						</button>
+						<!-- Sound toggle end -->
+					</div>
+					<!-- Controls: theme + sound end -->
+				</div>
+				<!-- Title area end -->
+			</header>
+			<!-- Top bar end -->
+
+			<!-- Main content start -->
+			<main class="app__main">
+				<!-- Controls section start -->
+				<section class="panel panel--controls">
+					<h2 class="panel__title">Enter your options</h2>
+					<p class="panel__hint">
+						Separate options with commas or new lines. Then send them into the galaxy.
+					</p>
+
+					<!-- Options input start -->
+					<div class="controls__input-group">
+						<label for="optionsInput" class="controls__label">Your options</label>
+						<textarea
+							id="optionsInput"
+							class="controls__textarea"
+							rows="4"
+							placeholder="e.g. Anime, Movies, Series, Games"
+						></textarea>
+					</div>
+					<!-- Options input end -->
+
+					<!-- Controls buttons start -->
+					<div class="controls__actions">
+						<button id="addOptionsBtn" class="btn btn--primary" type="button">
+							Add to Galaxy
+						</button>
+						<button id="clearOptionsBtn" class="btn btn--ghost" type="button">
+							Clear
+						</button>
+						<button id="chooseBtn" class="btn btn--accent" type="button" disabled>
+							Battle of Planets
+						</button>
+					</div>
+					<!-- Controls buttons end -->
+
+					<!-- Hint start -->
+					<p class="controls__shortcut-hint">
+						Tip: Press <span>Ctrl + Enter</span> (or <span>Cmd + Enter</span>) to
+						quickly add options.
+					</p>
+					<!-- Hint end -->
+
+					<!-- Options list start -->
+					<div class="options-list-wrapper">
+						<h3 class="options-list__title">Current options</h3>
+						<div id="optionsList" class="options-list">
+							<!-- Option tags will be injected here -->
+						</div>
+					</div>
+					<!-- Options list end -->
+				</section>
+				<!-- Controls section end -->
+
+				<!-- Galaxy section start -->
+				<section class="panel panel--galaxy">
+					<h2 class="panel__title">Your Orb Galaxy</h2>
+					<p class="panel__hint">
+						Watch your options become planets. When battle begins, one planet will
+						win.
+					</p>
+
+					<!-- Galaxy viewport start -->
+					<div class="galaxy" id="galaxy">
+						<!-- Orbs/planets will be injected here -->
+					</div>
+					<!-- Galaxy viewport end -->
+				</section>
+				<!-- Galaxy section end -->
+
+				<!-- Result section start -->
+				<section class="panel panel--result">
+					<h2 class="panel__title">Result</h2>
+
+					<!-- Result card start -->
+					<div id="resultCard" class="result-card" aria-live="polite">
+						<p class="result-card__label">The galaxy has chosen:</p>
+						<p id="resultText" class="result-card__value">No option chosen yet.</p>
+						<p id="resultMeta" class="result-card__meta">
+							Start a battle to see which planet wins.
+						</p>
+					</div>
+					<!-- Result card end -->
+
+					<!-- Quick history preview start -->
+					<div class="recent-history" id="recentHistory">
+						<!-- Filled by JS with last few battles -->
+					</div>
+					<!-- Quick history preview end -->
+
+					<!-- GitHub link placeholder start -->
+					<p class="github-note">
+						<a
+							href="https://github.com/your-username/orb-galaxy-random-chooser"
+							class="github-link"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							View the source code on GitHub
+						</a>
+					</p>
+					<!-- GitHub link placeholder end -->
+				</section>
+				<!-- Result section end -->
+			</main>
+			<!-- Main content end -->
+
+			<!-- Footer start -->
+			<footer class="app__footer">
+				<p class="app__footer-text">
+					Built with HTML, CSS &amp; JavaScript · Orb Galaxy Random Chooser
+				</p>
+			</footer>
+			<!-- Footer end -->
+		</div>
+		<!-- App wrapper end -->
+
+		<!-- Scripts start -->
+		<script src="assets/js/orb-galaxy/main.js"></script>
+		<!-- Scripts end -->
+	</body>
+</html>

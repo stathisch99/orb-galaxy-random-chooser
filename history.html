@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Meta start -->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Orb Galaxy · Battle History</title>
+		<!-- Meta end -->
+
+		<!-- Styles start -->
+		<link rel="stylesheet" href="assets/css/history/style.css" />
+		<!-- Styles end -->
+	</head>
+	<body class="theme--galaxy">
+		<!-- App wrapper start -->
+		<div class="app">
+			<!-- Top bar start -->
+			<header class="app__header">
+				<!-- Nav start -->
+				<nav class="app__nav">
+					<div class="app__brand">Orb Galaxy</div>
+					<div class="app__nav-links">
+						<a href="index.html" class="nav-link">Galaxy</a>
+						<a href="history.html" class="nav-link nav-link--active">History</a>
+					</div>
+				</nav>
+				<!-- Nav end -->
+
+				<!-- Title area start -->
+				<div class="app__hero">
+					<div>
+						<h1 class="app__title">Battle History</h1>
+						<p class="app__subtitle">
+							Review your past galaxy battles, see which planets won, and reuse option
+							sets on the main Galaxy page.
+						</p>
+					</div>
+
+					<!-- History actions start -->
+					<div class="app__toggles">
+						<button
+							id="clearHistoryBtn"
+							class="btn btn--ghost btn--small"
+							type="button"
+						>
+							Clear history
+						</button>
+					</div>
+					<!-- History actions end -->
+				</div>
+				<!-- Title area end -->
+			</header>
+			<!-- Top bar end -->
+
+			<!-- Main content start -->
+			<main class="app__main app__main--history">
+				<!-- Summary panel start -->
+				<section class="panel panel--summary">
+					<h2 class="panel__title">Summary</h2>
+					<p class="panel__hint">
+						See how many battles you have run, your most frequent winners, and quick
+						stats from your Orb Galaxy usage.
+					</p>
+
+					<div class="summary-grid">
+						<div class="summary-card">
+							<p class="summary-card__label">Total battles</p>
+							<p id="statTotalBattles" class="summary-card__value">0</p>
+						</div>
+
+						<div class="summary-card">
+							<p class="summary-card__label">Unique winners</p>
+							<p id="statUniqueWinners" class="summary-card__value">0</p>
+						</div>
+
+						<div class="summary-card">
+							<p class="summary-card__label">Most frequent winner</p>
+							<p id="statTopWinner" class="summary-card__value">–</p>
+						</div>
+
+						<div class="summary-card">
+							<p class="summary-card__label">Most used theme</p>
+							<p id="statTopTheme" class="summary-card__value">–</p>
+						</div>
+					</div>
+				</section>
+				<!-- Summary panel end -->
+
+				<!-- History list panel start -->
+				<section class="panel panel--history">
+					<h2 class="panel__title">All battles</h2>
+					<p class="panel__hint">
+						Click <strong>Use on Galaxy page</strong> to load those options back into
+						the main Orb Galaxy and run the battle again.
+					</p>
+
+					<!-- History controls start -->
+					<div class="history-controls">
+						<div class="history-controls__group">
+							<label for="filterTheme" class="history-controls__label">
+								Filter by theme
+							</label>
+							<select id="filterTheme" class="history-controls__select">
+								<option value="all">All themes</option>
+								<option value="galaxy">Galaxy</option>
+								<option value="solar">Solar System</option>
+								<option value="neon">Neon Grid</option>
+							</select>
+						</div>
+
+						<div class="history-controls__group">
+							<label for="sortOrder" class="history-controls__label"> Sort by </label>
+							<select id="sortOrder" class="history-controls__select">
+								<option value="newest">Newest first</option>
+								<option value="oldest">Oldest first</option>
+							</select>
+						</div>
+					</div>
+					<!-- History controls end -->
+
+					<!-- History table/list start -->
+					<div id="historyList" class="history-list">
+						<!-- JS will inject items here -->
+					</div>
+					<!-- History table/list end -->
+
+					<!-- Empty state start -->
+					<div id="historyEmptyState" class="history-empty">
+						<p class="history-empty__text">
+							No battles recorded yet. Go back to the
+							<a href="index.html" class="history-empty__link">Galaxy page</a>
+							and run your first battle.
+						</p>
+					</div>
+					<!-- Empty state end -->
+				</section>
+				<!-- History list panel end -->
+			</main>
+			<!-- Main content end -->
+
+			<!-- Footer start -->
+			<footer class="app__footer">
+				<p class="app__footer-text">
+					Built with HTML, CSS &amp; JavaScript · Orb Galaxy Random Chooser
+				</p>
+				<p class="app__footer-text">
+					<a
+						href="https://github.com/your-username/orb-galaxy-random-chooser"
+						class="github-link"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						View the source code on GitHub
+					</a>
+				</p>
+			</footer>
+			<!-- Footer end -->
+		</div>
+		<!-- App wrapper end -->
+
+		<!-- Scripts start -->
+		<script src="assets/js/history/main.js"></script>
+		<!-- Scripts end -->
+	</body>
+</html>

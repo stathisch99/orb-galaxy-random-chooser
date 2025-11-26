@@ -1,0 +1,498 @@
+/* =========================================
+   Global styles start
+========================================= */
+:root {
+	--color-bg: #050816;
+	--color-bg-2: #090b1f;
+	--color-accent: #7f5af0;
+	--color-accent-soft: rgba(127, 90, 240, 0.3);
+	--color-accent-strong: rgba(127, 90, 240, 0.9);
+	--color-accent-secondary: #2cb67d;
+	--color-text: #e4e6f0;
+	--color-text-muted: #9ca3af;
+	--color-danger: #f97373;
+	--panel-bg: rgba(15, 23, 42, 0.78);
+	--border-soft: rgba(148, 163, 184, 0.35);
+	--radius-lg: 1.5rem;
+	--radius-md: 0.9rem;
+	--shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.8);
+	--transition-fast: 0.18s ease-out;
+	--transition-med: 0.28s ease-in-out;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+		"Segoe UI", sans-serif;
+	color: var(--color-text);
+	background: radial-gradient(circle at top left, #1f2937 0, transparent 55%),
+		radial-gradient(circle at bottom right, #020617 0, transparent 60%),
+		linear-gradient(135deg, #020617, #020718 40%, #000);
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	padding: 1.5rem;
+}
+
+/* Global styles end */
+/* ========================================= */
+
+/* =========================================
+   App layout start
+========================================= */
+.app {
+	width: 100%;
+	max-width: 1200px;
+	border-radius: 2rem;
+	background: radial-gradient(
+				circle at top,
+				rgba(148, 163, 184, 0.15),
+				transparent 55%
+			)
+			border-box,
+		linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9))
+			padding-box;
+	border: 1px solid rgba(148, 163, 184, 0.35);
+	box-shadow: var(--shadow-soft);
+	backdrop-filter: blur(20px);
+	padding: 1.5rem 1.7rem 1.3rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+}
+
+/* Nav start */
+.app__nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0.8rem;
+}
+
+.app__brand {
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	color: rgba(209, 213, 219, 0.9);
+}
+
+.app__nav-links {
+	display: flex;
+	gap: 0.7rem;
+}
+
+.nav-link {
+	font-size: 0.85rem;
+	text-decoration: none;
+	color: var(--color-text-muted);
+	padding: 0.25rem 0.6rem;
+	border-radius: 999px;
+	border: 1px solid transparent;
+	transition: background var(--transition-fast),
+		border-color var(--transition-fast), color var(--transition-fast),
+		transform var(--transition-fast);
+}
+
+.nav-link:hover {
+	color: var(--color-text);
+	border-color: rgba(148, 163, 184, 0.7);
+	background: rgba(15, 23, 42, 0.8);
+	transform: translateY(-1px);
+}
+
+.nav-link--active {
+	color: #f9fafb;
+	background: radial-gradient(
+		circle at top left,
+		var(--color-accent),
+		transparent 55%
+	);
+	border-color: rgba(127, 90, 240, 0.7);
+}
+/* Nav end */
+
+.app__hero {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.app__title {
+	font-size: clamp(2rem, 3vw, 2.6rem);
+	margin: 0 0 0.4rem;
+	letter-spacing: 0.06em;
+}
+
+.app__subtitle {
+	margin: 0;
+	font-size: 0.98rem;
+	color: var(--color-text-muted);
+}
+
+.app__toggles {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.7rem;
+	align-items: center;
+}
+
+.app__main {
+	display: grid;
+	grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.7fr);
+	gap: 1.2rem;
+}
+
+.app__main--history {
+	align-items: flex-start;
+}
+
+.panel {
+	background: var(--panel-bg);
+	border-radius: var(--radius-lg);
+	border: 1px solid var(--border-soft);
+	padding: 1.3rem 1.3rem 1.1rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.panel::before {
+	content: "";
+	position: absolute;
+	inset: -40%;
+	background: radial-gradient(
+			circle at 10% 0,
+			rgba(56, 189, 248, 0.13),
+			transparent 60%
+		),
+		radial-gradient(circle at 90% 100%, rgba(127, 90, 240, 0.14), transparent 55%);
+	opacity: 0.6;
+	pointer-events: none;
+	z-index: -1;
+}
+
+.panel__title {
+	margin: 0 0 0.4rem;
+	font-size: 1.05rem;
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	font-weight: 600;
+}
+
+.panel__hint {
+	margin: 0 0 0.9rem;
+	font-size: 0.86rem;
+	color: var(--color-text-muted);
+}
+
+/* App layout end */
+/* ========================================= */
+
+/* =========================================
+   Buttons & small controls start
+========================================= */
+
+.btn {
+	border-radius: 999px;
+	border: 1px solid transparent;
+	padding: 0.45rem 0.9rem;
+	font-size: 0.9rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+		border-color var(--transition-fast), background var(--transition-fast),
+		color var(--transition-fast), opacity var(--transition-fast);
+	display: inline-flex;
+	align-items: center;
+	gap: 0.3rem;
+}
+
+.btn:disabled {
+	opacity: 0.4;
+	cursor: not-allowed;
+	box-shadow: none;
+	transform: none;
+}
+
+.btn--small {
+	padding: 0.32rem 0.7rem;
+	font-size: 0.8rem;
+}
+
+.btn--ghost {
+	background: transparent;
+	color: var(--color-text-muted);
+	border-color: rgba(148, 163, 184, 0.6);
+}
+
+.btn--ghost:hover:not(:disabled) {
+	border-color: rgba(249, 250, 251, 0.9);
+	color: var(--color-text);
+	transform: translateY(-1px);
+}
+
+/* Buttons & small controls end */
+/* ========================================= */
+
+/* =========================================
+   Summary section start
+========================================= */
+
+.panel--summary {
+	min-height: 220px;
+}
+
+.summary-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.8rem;
+}
+
+.summary-card {
+	border-radius: var(--radius-md);
+	border: 1px solid rgba(148, 163, 184, 0.4);
+	background: linear-gradient(
+		135deg,
+		rgba(15, 23, 42, 0.9),
+		rgba(15, 23, 42, 0.95)
+	);
+	padding: 0.75rem 0.9rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	box-shadow: 0 10px 24px rgba(15, 23, 42, 0.8);
+}
+
+.summary-card__label {
+	font-size: 0.8rem;
+	color: var(--color-text-muted);
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+}
+
+.summary-card__value {
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+
+/* Summary section end */
+/* ========================================= */
+
+/* =========================================
+   History list section start
+========================================= */
+
+.panel--history {
+	min-height: 260px;
+}
+
+.history-controls {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.8rem;
+	margin-bottom: 0.8rem;
+}
+
+.history-controls__group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.history-controls__label {
+	font-size: 0.78rem;
+	color: var(--color-text-muted);
+	text-transform: uppercase;
+	letter-spacing: 0.13em;
+}
+
+.history-controls__select {
+	border-radius: 999px;
+	padding: 0.35rem 0.75rem;
+	font-size: 0.85rem;
+	border: 1px solid rgba(148, 163, 184, 0.7);
+	background: rgba(15, 23, 42, 0.95);
+	color: var(--color-text);
+}
+
+/* History rows */
+.history-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+	max-height: 420px;
+	overflow-y: auto;
+	padding-right: 0.3rem;
+}
+
+.history-item {
+	border-radius: var(--radius-md);
+	border: 1px solid rgba(148, 163, 184, 0.4);
+	background: rgba(15, 23, 42, 0.9);
+	padding: 0.7rem 0.8rem;
+	display: grid;
+	grid-template-columns: minmax(0, 2.2fr) minmax(0, 2fr) auto;
+	gap: 0.6rem;
+	align-items: center;
+	font-size: 0.85rem;
+}
+
+.history-item__meta {
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+}
+
+.history-item__title {
+	font-weight: 500;
+}
+
+.history-item__sub {
+	font-size: 0.78rem;
+	color: var(--color-text-muted);
+}
+
+.history-item__options {
+	font-size: 0.8rem;
+	color: var(--color-text-muted);
+}
+
+.history-item__options-label {
+	font-size: 0.78rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: rgba(148, 163, 184, 0.9);
+	margin-bottom: 0.1rem;
+}
+
+.history-item__options-text {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Empty state */
+.history-empty {
+	margin-top: 0.8rem;
+	border-radius: var(--radius-md);
+	border: 1px dashed rgba(148, 163, 184, 0.5);
+	padding: 0.7rem 0.9rem;
+	font-size: 0.85rem;
+	color: var(--color-text-muted);
+	display: none; /* JS will toggle */
+}
+
+.history-empty__link {
+	color: var(--color-accent-secondary);
+	text-decoration: none;
+}
+
+.history-empty__link:hover {
+	text-decoration: underline;
+}
+
+/* History list section end */
+/* ========================================= */
+
+/* =========================================
+   Footer start
+========================================= */
+.app__footer {
+	text-align: center;
+	margin-top: 0.2rem;
+}
+
+.app__footer-text {
+	margin: 0;
+	font-size: 0.8rem;
+	color: var(--color-text-muted);
+}
+
+/* GitHub link styling (reuse from main) */
+.github-link {
+	color: var(--color-accent-secondary);
+	text-decoration: none;
+	border-bottom: 1px dotted rgba(45, 212, 191, 0.7);
+	padding-bottom: 1px;
+}
+
+.github-link:hover {
+	color: #a5f3fc;
+	border-bottom-style: solid;
+}
+/* Footer end */
+/* ========================================= */
+
+/* =========================================
+   Responsive styles start
+========================================= */
+@media (max-width: 900px) {
+	body {
+		padding: 1.1rem;
+	}
+
+	.app {
+		padding-inline: 1.2rem;
+	}
+
+	.app__main {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.summary-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.history-item {
+		grid-template-columns: minmax(0, 1.8fr) minmax(0, 2fr);
+		grid-template-rows: auto auto;
+	}
+
+	.history-item > .btn {
+		grid-column: 1 / -1;
+		justify-content: flex-start;
+	}
+}
+
+@media (max-width: 640px) {
+	body {
+		padding: 0.7rem;
+	}
+
+	.app {
+		border-radius: 1.4rem;
+		padding-inline: 1rem;
+	}
+
+	.app__hero {
+		align-items: flex-start;
+	}
+
+	.app__main {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.summary-grid {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.history-item {
+		grid-template-columns: minmax(0, 1fr);
+		grid-template-rows: auto auto auto;
+	}
+
+	.history-item > .btn {
+		justify-content: center;
+	}
+}
+/* Responsive styles end */
+/* ========================================= */
