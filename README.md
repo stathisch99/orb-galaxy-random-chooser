@@ -96,27 +96,30 @@ Each losing planet bursts into particles with random movement directions and str
 
 ## 📁 Project Folder Structure
 
+```
 orb-galaxy-random-chooser/
 │
-├── index.html # Main app (battle of planets)
-├── history.html # Battle history & statistics
+├── index.html              # Main app (battle of planets)
+├── history.html            # Battle history & statistics
 │
 ├── assets/
-│ ├── css/
-│ │ ├── orb-galaxy/
-│ │ │ └── style.css
-│ │ └── history/
-│ │ └── style.css
-│ │
-│ ├── js/
-│ │ ├── orb-galaxy/
-│ │ │ └── main.js
-│ │ └── history/
-│ │ └── main.js
-│ │
-│ └── img/ # Optional images (if any)
+│   ├── css/
+│   │   ├── orb-galaxy/
+│   │   │   └── style.css
+│   │   └── history/
+│   │       └── style.css
+│   │
+│   ├── js/
+│   │   ├── orb-galaxy/
+│   │   │   └── main.js
+│   │   └── history/
+│   │       └── main.js
+│   │
+│   └── img/                # Optional images (if any)
 │
 └── README.md
+```
+
 
 Each page loads **only its own CSS and JS**, keeping things clean and tutorial-friendly.
 
